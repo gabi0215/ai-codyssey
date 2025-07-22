@@ -8,6 +8,9 @@ zip_path = "dataFile.zip"
 # 압축해제 할 위치(프로젝트 폴더 내 압축 해제할 폴더 생성)
 extract_dir = "./area_csv"
 
+# 폴더 없으면 자동 생성
+os.makedirs(extract_dir, exist_ok=True)
+
 # 압축 해제하기.
 with zipfile.ZipFile(zip_path, 'r') as zip_ref:
     zip_ref.extractall(extract_dir)
